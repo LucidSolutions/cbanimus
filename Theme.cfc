@@ -66,7 +66,7 @@ component{
 	// Layout Variables
     this.name       	= "Animus Theme";
 	this.description 	= "Content Box Theme - Animus Theme";
-	this.version		= "1.0.0";
+	this.version		= "1.1.0";
 	this.author 		= "Lucid OutSourcing Solutions";
 	this.authorURL		= "http://www.lucidsolutions.in";
 	// Screenshot URL, can be absolute or locally in your layout package.
