@@ -32,18 +32,7 @@
 		</div>
 	</div>
 <cfelse>
-	<cfset bodyHeaderStyle = "">
-	<cfset bodyHeaderH1Style = "">
-	<cfif cb.themeSetting( 'overrideHeaderColors' )>
-		<cfif len( cb.themeSetting( 'overrideHeaderBGColor' ) )>
-			<cfset bodyHeaderStyle = bodyHeaderStyle & 'background-color: ' & cb.themeSetting( 'overrideHeaderBGColor' ) & ';'>
-		</cfif>
-
-		<cfif len( cb.themeSetting( 'overrideHeaderTextColor' ) )>
-			<cfset bodyHeaderH1Style = bodyHeaderH1Style & 'color: ' & cb.themeSetting( 'overrideHeaderTextColor' ) & ';'>
-		</cfif>
-	</cfif>
-	<div id="body-header" style="#bodyHeaderStyle#" class="back_color">
+	<div id="body-header" class="back_color">
 		<div class="container">
 			<!--- Title --->
 
@@ -55,6 +44,7 @@
 		</div>
 	</div>
 </cfif>
+
 
 <!--- ContentBoxEvent --->
 #cb.event( "cbui_prePageDisplay" )#
