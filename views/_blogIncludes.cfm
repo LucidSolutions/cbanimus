@@ -43,7 +43,11 @@
 <link rel="stylesheet" href="#cb.themeRoot()#/includes/css/swipebox.css?v=1">
 <!-- endinjector -->
 
-<!---<cfif len( cb.themeSetting( 'cssStyleOverrides' ) )></cfif>--->
+<cfif len( cb.themeSetting( 'cssStyleOverrides' ) )>
+<style>
+	#cb.themeSetting( 'cssStyleOverrides' )#
+</style>	
+</cfif>
 
 <!--- ********************************************************************************* --->
 <!--- 					JAVASCRIPT														--->

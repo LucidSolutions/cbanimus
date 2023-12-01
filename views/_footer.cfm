@@ -7,8 +7,8 @@
 					<i class="ham"></i>
 				</div>
 				<div class="top2">
-					<h6>Copyrights © #cb.siteName()#</h6>
-					<p>All rights reserved</p>
+					<h6>Theme Developed By </h6>
+					<p><a href="https://lucidoutsourcing.com/">Lucid Outsourcing Solutions Pvt. Ltd.</a></p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

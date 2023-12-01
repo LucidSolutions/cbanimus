@@ -22,7 +22,7 @@
 		<div class="det_text">
 			<cfif prc.entry.getFeaturedImage() NEQ ''>
 				<div class="det_pic">
-					<img src="#prc.entry.getFeaturedImage()#" class="img-responsive" alt="">
+					<img src="#prc.entry.getFeaturedImageURL()#" class="img-responsive" alt="">
 				</div>
 			</cfif>
 			<h2 class="det_title">#prc.entry.getTitle()#</h2>
@@ -43,79 +43,77 @@
 		</cfif>
 
 
-								<div class="det_text">
-									<cfif prc.entry.getFeaturedImage() NEQ ''>
-										<div class="det_pic">
-											<img src="#prc.entry.getFeaturedImage()#" class="img-responsive" alt="">
-										</div>
-									</cfif>
-									<h2 class="det_title">#prc.entry.getTitle()#</h2>
-									#prc.entry.renderContent()#
-								</div>
-								<ul class="links">
-												 <li><a href="##"><i class="admin"> </i><span class="icon_text">Posted By: Admin</span></a></li>
-												 <li><i class="comments"> </i><span class="icon_text">#prc.entry.getNumberOfApprovedComments()# Comments</span></li>
-											 	 <li><i class="views"> </i><span class="icon_text">#prc.entry.getNumberOfHits()#</span></li>
-												 <li><i class="tags"> </i><span class="icon_text">Tags: #cb.quickCategoryLinks(prc.entry)#</span></li>
-											</ul>
+		<!--- <div class="det_text">
+			<cfif prc.entry.getFeaturedImage() NEQ ''>
+				<div class="det_pic">
+					<img src="#prc.entry.getFeaturedImage()#" class="img-responsive" alt="">
+				</div>
+			</cfif>
+			<h2 class="det_title">#prc.entry.getTitle()#</h2>
+			#prc.entry.renderContent()#
+		</div>
+		<ul class="links">
+			<li><a href="##"><i class="admin"> </i><span class="icon_text">Posted By: Admin</span></a></li>
+			<li><i class="comments"> </i><span class="icon_text">#prc.entry.getNumberOfApprovedComments()# Comments</span></li>
+			<li><i class="views"> </i><span class="icon_text">#prc.entry.getNumberOfHits()#</span></li>
+			<li><i class="tags"> </i><span class="icon_text">Tags: #cb.quickCategoryLinks(prc.entry)#</span></li>
+		</ul> --->
 
-		<div class="lev">
+		<!--- <div class="lev">
 			<div class="leave">
 				<h4>Leave a comment</h4>
 			</div>
 			#cb.quickCommentForm( prc.entry )#
-		</div>
+		</div> --->
 
 
-		<!-- <cfif !args.print>
-		- Comments Bar -
-		#html.anchor(name="comments")#
-		<div class="post-comments">
-			<div class="infoBar">
-				<cfif NOT cb.isCommentsEnabled(prc.entry)>
-				<i class="icon-warning-sign icon-2x"></i>
-				Comments are currently closed
-				<cfelse>
-					<p>
-						<button class="btn btn-primary" onclick="toggleCommentForm()"><i class="fa fa-comments"></i> Add Comment (#prc.entry.getNumberOfApprovedComments()#)</button>
-					</p>
-				</cfif>
-			</div>
-		</div>
-
-		- Separator -
-		<div class="separator"></div>
-
-		- Comment Form: I can build it or I can quick it? -
-		<div id="commentFormShell">
-			<div class="row">
-				<div class="col-sm-12">
-					#cb.quickCommentForm( prc.entry )#
+		<cfif !args.print>
+			<!--- Comments Bar --->
+			#html.anchor(name="comments")#
+			<div class="post-comments">
+				<div class="infoBar">
+					<cfif NOT cb.isCommentsEnabled(prc.entry)>
+						<i class="icon-warning-sign icon-2x"></i>
+						Comments are currently closed
+					<cfelse>
+						<p>
+							<button class="btn btn-primary" onclick="toggleCommentForm()"><i class="fa fa-comments"></i> Add Comment (#prc.entry.getNumberOfApprovedComments()#)</button>
+						</p>
+					</cfif>
 				</div>
 			</div>
-		</div>
-		</cfif> -->
 
-										</div>
+			<!--- Separator --->
+			<div class="separator"></div>
+
+			<!--- Comment Form: I can build it or I can quick it? --->
+			<div id="commentFormShell">
+				<div class="row">
+					<div class="col-sm-12">
+						#cb.quickCommentForm( prc.entry )#
+					</div>
+				</div>
+			</div>
+		</cfif> 
 
 		<!--- Display Comments --->
 
-					<!-- <cfif !args.print>
-					- Comments Bar -
-					#html.anchor(name="comments")#
-					<div class="post-comments">
-						<div class="infoBar">
-							<cfif NOT cb.isCommentsEnabled(prc.entry)>
-							<i class="icon-warning-sign icon-2x"></i>
-							Comments are currently closed
-							<cfelse>
-								<p>
-									<button class="btn btn-primary" onclick="toggleCommentForm()"><i class="fa fa-comments"></i> Add Comment (#prc.entry.getNumberOfApprovedComments()#)</button>
-								</p>
-							</cfif>
-						</div>
-					</div>
-
+		<!--- <cfif !args.print>
+			<!--- Comments Bar --->
+			#html.anchor(name="comments")#
+			<div class="post-comments">
+				<div class="infoBar">
+					<cfif NOT cb.isCommentsEnabled(prc.entry)>
+						<i class="icon-warning-sign icon-2x"></i>
+						Comments are currently closed
+					<cfelse>
+						<p>
+							<button class="btn btn-primary" onclick="toggleCommentForm()"><i class="fa fa-comments"></i> Add Comment (#prc.entry.getNumberOfApprovedComments()#)</button>
+						</p>
+					</cfif>
+				</div>
+			</div>
+		</cfif> --->
 		<!--- ContentBoxEvent --->
 		#cb.event("cbui_postEntryDisplay")#
 	</div>

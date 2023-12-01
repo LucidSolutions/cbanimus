@@ -5,7 +5,6 @@
 		<div class="container">
 		</div>
 	</div>
-</div>
 
 
 	<!--- Body Main --->
@@ -22,7 +21,7 @@
 						<div class="alert alert-info">
 
 							<a href="#cb.linkBlog()#" class="btn btn-primary btn-sm pull-right" title="Remove filter and view all entries">Remove Filter</a>
-							Category Filtering: '#rc.category#'
+							Category Filtering: '#encodeForHTML( rc.category )#'
 						</div>
 						<br/>
 					</cfif>
@@ -33,7 +32,7 @@
 							<a class="btn btn-primary" href="#cb.linkBlog()#" title="Clear search and view all entries">Clear Search</a>
 						</p>
 						<div class="infoBar">
-							Searching by: '#rc.q#'
+							Searching by: '#encodeForHTML( rc.q )#'
 						</div>
 						<br/>
 					</cfif>
@@ -42,11 +41,10 @@
 						#cb.quickEntries()#
 					</div>
 					<br/>
-				</cfif>
-				<!--- Entries displayed here --->
-				<div class="row">
-					#cb.quickEntries()#
-				</div>
+					<!--- <!--- Entries displayed here --->
+					<div class="row">
+						#cb.quickEntries()#
+					</div> --->
 
 					<!--- ContentBoxEvent --->
 					#cb.event( "cbui_postIndexDisplay" )#

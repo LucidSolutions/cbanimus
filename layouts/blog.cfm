@@ -15,7 +15,8 @@
 	#cb.event( "cbui_afterBodyStart" )#
 	
 	<!--- Header --->
-	#cb.quickView( view='_header' )#
+	#cb.quickView( '_header' )#
+
 	<!--- ContentBoxEvent --->
 	#cb.event( "cbui_beforeContent" )#
 
